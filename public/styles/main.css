@@ -15,6 +15,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: var(--grayBlue);
+  user-select: none;
 }
 
 h1,
@@ -30,11 +31,13 @@ h8 {
 }
 
 /* Background */
+
 .background {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: absolute;
+  top: 0;
   background: linear-gradient(0deg, var(--bgStart), var(--bgEnd));
   z-index: 1;
 }
@@ -70,3 +73,25 @@ h8 {
     max-height: 40%;
   }
 }
+
+/* End of backgroud */
+
+/* Header */
+
+.title-container {
+  margin-top: 15vh;
+  position: relative;
+  z-index: 3;
+}
+
+.title-container .title {
+  color: var(--white);
+  font-size: 1.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+/* End of header */
