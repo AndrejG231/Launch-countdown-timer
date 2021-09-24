@@ -1,0 +1,72 @@
+/* Default styles */
+:root {
+  --grayBlue: hsl(237, 18%, 59%);
+  --softRed: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --darkBlue: hsl(236, 21%, 26%);
+  --darkBlue2: hsl(235, 16%, 14%);
+  --darkBlue3: hsl(234, 17%, 12%);
+  --bgStart: #261e2f;
+  --bgEnd: #191a24;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--grayBlue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+h8 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+.background {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  background: linear-gradient(0deg, var(--bgStart), var(--bgEnd));
+  z-index: 1;
+}
+
+.background .hills {
+  position: absolute;
+  bottom: 0;
+  right: -230px;
+  height: 200px;
+  z-index: 2;
+}
+
+.background .stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* Move hills more to center on bigger screens */
+@media screen and (min-width: 768px) {
+  .background .hills {
+    right: 0;
+  }
+}
+
+/* Automatic scaling at 1280px */
+@media screen and (min-width: 1280px) {
+  .background .hills {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+  }
+}
