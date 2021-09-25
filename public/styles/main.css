@@ -1,9 +1,9 @@
 /* Default styles */
 :root {
-  --grayBlue: hsl(237, 18%, 59%);
+  --grayBlue: hsl(236, 14%, 54%);
   --softRed: hsl(345, 95%, 68%);
   --white: hsl(0, 0%, 100%);
-  --darkBlue: hsl(236, 21%, 26%);
+  --darkBlue: hsl(236, 22%, 30%);
   --darkBlue2: hsl(235, 16%, 14%);
   --darkBlue3: hsl(234, 17%, 12%);
   --bgStart: #261e2f;
@@ -42,7 +42,7 @@ h8 {
   z-index: 1;
 }
 
-.background .hills {
+.hills {
   position: absolute;
   bottom: 0;
   right: -230px;
@@ -50,12 +50,27 @@ h8 {
   z-index: 2;
 }
 
-.background .stars {
+.stars {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
   object-fit: cover;
+  animation: flying-stars 10s infinite linear;
+}
+
+.stars.copy {
+  left: -100vw;
+}
+
+/* Stars animation */
+@keyframes flying-stars {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
 }
 
 /* Move hills more to center on bigger screens */
@@ -95,3 +110,103 @@ h8 {
 }
 
 /* End of header */
+
+/* Flipping cards */
+
+.card-top {
+  z-index: 5;
+}
+
+.card-bottom {
+  z-index: 4;
+}
+
+.cards-container {
+  margin: auto;
+  margin-top: 10vh;
+  position: relative;
+  z-index: 3;
+  width: 800px;
+  /* border: 2px solid green; */
+}
+
+.card {
+  width: 130px;
+  height: 130px;
+}
+
+.card-top,
+.card-bottom {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  transition: 0.25s all linear;
+  perspective: 100px;
+  /* border: 2px solid red; */
+}
+
+/* Cards filled with box shadow to provide scooped corners */
+
+.card-top:after,
+.card-top:before,
+.card-bottom:after,
+.card-bottom:before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  /* border: 1px solid green; */
+  position: absolute;
+  transform: translate(50%, -50%);
+}
+
+/* Border radiuses for cards */
+.card-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-top:after,
+.card-top:before {
+  box-shadow: 5px -5px 0px 80px var(--darkBlue),
+    5px -50px 0px 80px var(--darkBlue);
+}
+
+.card-bottom:after,
+.card-bottom:before {
+  box-shadow: 5px 5px 0px 80px var(--grayBlue),
+    5px 50px 0px 80px var(--grayBlue);
+}
+
+.card-top:after {
+  right: 100%;
+  top: 100%;
+}
+
+.card-top:before {
+  right: 0%;
+  top: 100%;
+}
+
+.card-bottom:after {
+  right: 0%;
+  top: 0%;
+}
+
+.card-bottom:before {
+  right: 100%;
+  top: 0%;
+}
+
+/* End of card shapes */
+
+.card-top {
+  transform: perspective(50em);
+}
