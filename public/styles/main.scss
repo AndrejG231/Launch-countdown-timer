@@ -1,44 +1,36 @@
-/* Default styles */
-:root {
-  --grayBlue: hsl(236, 14%, 54%);
-  --softRed: hsl(345, 95%, 68%);
-  --white: hsl(0, 0%, 100%);
-  --darkBlue: hsl(236, 22%, 30%);
-  --darkBlue2: hsl(235, 16%, 14%);
-  --darkBlue3: hsl(234, 17%, 12%);
-  --bgStart: #261e2f;
-  --bgEnd: #191a24;
-}
+/* Colors */
+$grayBlue: hsl(236, 14%, 54%);
+$softRed: hsl(345, 95%, 68%);
+$white: hsl(0, 0%, 100%);
+$darkBlue: hsl(236, 22%, 30%);
+$darkBlue2: hsl(235, 16%, 14%);
+$darkBlue3: hsl(234, 17%, 12%);
+$bgStart: #261e2f;
+$bgEnd: #191a24;
+
+/* Some default styles */
 
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--grayBlue);
+  background-color: $grayBlue;
   user-select: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h7,
-h8 {
+h1 {
   margin: 0;
   padding: 0;
 }
 
 /* Background */
-
 .background {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: absolute;
   top: 0;
-  background: linear-gradient(0deg, var(--bgStart), var(--bgEnd));
+  background: linear-gradient(0deg, $bgStart, $bgEnd);
   z-index: 1;
 }
 
@@ -48,6 +40,18 @@ h8 {
   right: -230px;
   height: 200px;
   z-index: 2;
+
+  /* Move hills more to center on bigger screens */
+  @media screen and (min-width: 768px) {
+    right: 0;
+  }
+
+  /* Automatic scaling after 1280px */
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+  }
 }
 
 .stars {
@@ -57,10 +61,11 @@ h8 {
   z-index: 1;
   object-fit: cover;
   animation: flying-stars 10s infinite linear;
-}
 
-.stars.copy {
-  left: -100vw;
+  // Copy for flying stars animation
+  &.copy {
+    left: -100vw;
+  }
 }
 
 /* Stars animation */
@@ -73,53 +78,26 @@ h8 {
   }
 }
 
-/* Move hills more to center on bigger screens */
-@media screen and (min-width: 768px) {
-  .background .hills {
-    right: 0;
-  }
-}
-
-/* Automatic scaling at 1280px */
-@media screen and (min-width: 1280px) {
-  .background .hills {
-    width: 100%;
-    height: auto;
-    max-height: 40%;
-  }
-}
-
-/* End of backgroud */
+/* End of background */
 
 /* Header */
-
 .title-container {
   margin-top: 15vh;
   position: relative;
   z-index: 3;
+  .title {
+    color: $white;
+    font-size: 1.875rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+  }
 }
-
-.title-container .title {
-  color: var(--white);
-  font-size: 1.875rem;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-}
-
 /* End of header */
 
 /* Flipping cards */
-
-.card-top {
-  z-index: 5;
-}
-
-.card-bottom {
-  z-index: 4;
-}
 
 .cards-container {
   margin: auto;
@@ -141,6 +119,14 @@ h8 {
   height: 100%;
   transform-origin: center;
   transition: 0.25s all linear;
+}
+
+.card-top {
+  z-index: 5;
+}
+
+.card-bottom {
+  z-index: 4;
 }
 
 .card-top,
@@ -169,59 +155,42 @@ h8 {
   transform: translate(50%, -50%);
 }
 
-/* Border radiuses for cards */
 .card-top {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  &:after {
+    right: 100%;
+    top: 100%;
+  }
+  &:before {
+    right: 0%;
+    top: 100%;
+  }
+  &:after,
+  &:before {
+    box-shadow: 5px -5px 0px 80px $darkBlue, 5px -50px 0px 80px $darkBlue;
+  }
 }
 
 .card-bottom {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-}
-
-.card-top:after,
-.card-top:before {
-  box-shadow: 5px -5px 0px 80px var(--darkBlue),
-    5px -50px 0px 80px var(--darkBlue);
-}
-
-.card-bottom:after,
-.card-bottom:before {
-  box-shadow: 5px 5px 0px 80px var(--grayBlue),
-    5px 50px 0px 80px var(--grayBlue);
-}
-
-.card-top:after {
-  right: 100%;
-  top: 100%;
-}
-
-.card-top:before {
-  right: 0%;
-  top: 100%;
-}
-
-.card-bottom:after {
-  right: 0%;
-  top: 0%;
-}
-
-.card-bottom:before {
-  right: 100%;
-  top: 0%;
-}
-
-.days {
-  z-index: 10;
-  display: block;
-  position: relative;
-  color: var(--softRed);
-  text-align: center;
+  &:after {
+    right: 0%;
+    top: 0%;
+  }
+  &:before {
+    right: 100%;
+    top: 0%;
+  }
+  &:after,
+  &:before {
+    box-shadow: 5px 5px 0px 80px $grayBlue, 5px 50px 0px 80px $grayBlue;
+  }
 }
 
 /* Card perspective */
-
+// Multiple transform phase classes for smooth rotation an number switching
 .transform-1 {
   transform: perspective(300px) rotateX(-10deg);
 }
@@ -232,4 +201,14 @@ h8 {
 
 .transform-3 {
   transform: perspective(300px) rotateX(-90deg);
+}
+
+/* End of cards */
+
+.days {
+  z-index: 10;
+  display: block;
+  position: relative;
+  color: $softRed;
+  text-align: center;
 }
