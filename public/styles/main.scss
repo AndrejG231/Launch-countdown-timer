@@ -105,6 +105,8 @@ h1 {
   position: relative;
   z-index: 3;
   width: 800px;
+  display: flex;
+  justify-content: space-between;
   /* border: 2px solid green; */
 }
 
@@ -208,11 +210,13 @@ h1 {
   position: absolute;
   color: $softRed;
   text-align: center;
-  font-size: 100px;
+  font-weight: 700;
+  font-size: 80px;
+  font-family: "Red Hat Text", sans-serif;
   width: 130px;
   height: 130px;
   line-height: 130px;
-  &.bottom{
+  &.bottom {
     transform: translateY(-50%);
   }
 }
