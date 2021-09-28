@@ -30,12 +30,15 @@
     <!-- Flipping cards -->
     <main class="cards-container">
       <div class="card-placeholder">
-        <div class="card-top static" id="staticTop"></div>
-        <div class="card-bottom static" id="staticBottom"></div>
+        <div class="card-top static" id="staticTop">
+          <span class="days" id="staticTopVal">00</span>
+        </div>
+        <div class="card-bottom static" id="staticBottom">
+          <span class="days bottom" id="staticBottomVal">00</span>
+        </div>
         <div class="card" id="movingCard">
-          <div class="card-top">
-            <span class="days">trala</span>
-          </div>
+          <span class="days" id="movingVal">00</span>
+          <div class="card-top"></div>
           <div class="card-bottom"></div>
         </div>
       </div>

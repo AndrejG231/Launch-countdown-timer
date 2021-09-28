@@ -205,7 +205,14 @@ h1 {
 .days {
   z-index: 10;
   display: block;
-  position: relative;
+  position: absolute;
   color: $softRed;
   text-align: center;
+  font-size: 100px;
+  width: 130px;
+  height: 130px;
+  line-height: 130px;
+  &.bottom{
+    transform: translateY(-50%);
+  }
 }
