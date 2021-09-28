@@ -120,6 +120,7 @@ h1 {
   transform-origin: center;
   z-index: 11;
   position: relative;
+  transition: 0.2s all linear, 0s color linear;
 }
 
 .card-top {
@@ -199,29 +200,7 @@ h1 {
   }
 }
 
-/* Card perspective */
-// Multiple transform phase classes for smooth rotation an number switching
-.near-home {
-  transform: perspective(300px) rotateX(-10deg);
-}
-
-.middle {
-  transform: perspective(300px) rotateX(-90deg);
-}
-
-.reversed-middle {
-  transform: perspective(300px) rotateX(90deg);
-}
-
-.near-end {
-  transform: perspective(300px) rotateX(10deg);
-}
-
-.transition-type {
-  transition: 0.2s all linear, 0s color linear;
-}
-
-/* End of cards */
+//* End of cards */
 
 .days {
   z-index: 10;
