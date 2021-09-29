@@ -43,7 +43,7 @@ const rotateCard = (container: cardContainer, count: number) => {
           () => (staticBottomVal.innerText = format2digit(count)),
           180
         );
-      }, 30);
+      }, 20);
     }, timeout / 2);
   }
 };

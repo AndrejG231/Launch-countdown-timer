@@ -1,10 +1,13 @@
 import getElements from "./get_elements";
+import rotateCard from "./rotate_card";
+import substractTime from "./substract_time";
+import { time } from "./types";
 import { format2digit } from "./utility";
 
 const { days, hours, minutes, seconds } = getElements();
 
-const time = {
-  days: 24,
+const time: { [key in string]: number } = {
+  days: 14,
   hours: 0,
   minutes: 0,
   seconds: 0,
@@ -13,28 +16,16 @@ const time = {
 //
 
 const runCycle = () => {
+  substractTime(time as time);
   for (const container of [days, hours, minutes, seconds]) {
-    let count = 0;
-    const {
-      staticTop,
-      staticBottom,
-      movingCard,
-      staticTopVal,
-      staticBottomVal,
-      movingVal,
-    } = container;
     if (
-      staticTop &&
-      staticBottom &&
-      movingCard &&
-      staticTopVal &&
-      staticBottomVal &&
-      movingVal
+      format2digit(time[container.timeKey]) !== container.movingVal?.innerText
     ) {
-      // Default z-indexes for cards
-      staticTop.style.zIndex = "10";
-      staticBottom.style.zIndex = "10";
-      movingCard.style.zIndex = "11";
+      console.log(
+        format2digit(time[container.timeKey]),
+        container.movingVal?.innerText
+      );
+      rotateCard(container, time[container.timeKey]);
     }
   }
 };
