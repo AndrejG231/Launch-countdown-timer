@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon-32x32.png" type="image/png" />
-    <title>Countdown timer</title>
-    <!-- Css and Js -->
-    <link rel="stylesheet" href="styles/main.css" />
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Background -->
-    <div class="background">
-      <img src="images/pattern-hills.svg" class="hills" />
-      <img src="images/bg-stars.svg" class="stars" />
-      <img src="images/bg-stars.svg" class="stars copy" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png" />
+  <title>Countdown timer</title>
+  <!-- Css and Js -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="background">
+    <img src="images/pattern-hills.svg" class="hills" />
+    <img src="images/bg-stars.svg" class="stars" />
+    <img src="images/bg-stars.svg" class="stars copy" />
+  </div>
+  <!-- Header title -->
+  <header class="title-container">
+    <h1 class="title">We're launching soon</h1>
+  </header>
+  <!-- Flipping cards -->
+  <main class="cards-container">
+    <!-- Days -->
+    <div class="card-placeholder" id="days">
+      <div class="card-top static staticTop">
+        <span class="time-count staticTopVal">14</span>
+      </div>
+      <div class="card-bottom static staticBottom">
+        <span class="time-count bottom staticBottomVal">14</span>
+      </div>
+      <div class="card movingCard">
+        <span class="time-count movingVal">14</span>
+        <div class="card-top"></div>
+        <div class="card-bottom"></div>
+      </div>
+      <span class="time-count-name">Days</span>
     </div>
-    <!-- Header title -->
-    <header class="title-container">
-      <h1 class="title">We're launching soon</h1>
-    </header>
-    <!-- Flipping cards -->
-    <main class="cards-container">
-      <!-- Days -->
-      <div class="card-placeholder" id="days">
-        <div class="card-top static staticTop">
-          <span class="time-count staticTopVal">14</span>
-        </div>
-        <div class="card-bottom static staticBottom">
-          <span class="time-count bottom staticBottomVal">14</span>
-        </div>
-        <div class="card movingCard">
-          <span class="time-count movingVal">14</span>
-          <div class="card-top"></div>
-          <div class="card-bottom"></div>
-        </div>
+    <!-- Hours -->
+    <div class="card-placeholder" id="hours">
+      <div class="card-top static staticTop">
+        <span class="time-count staticTopVal">00</span>
       </div>
-      <!-- Hours -->
-      <div class="card-placeholder" id="hours">
-       <div class="card-top static staticTop">
-          <span class="time-count staticTopVal">00</span>
-        </div>
-        <div class="card-bottom static staticBottom">
-          <span class="time-count bottom staticBottomVal">00</span>
-        </div>
-        <div class="card movingCard">
-          <span class="time-count movingVal">00</span>
-          <div class="card-top"></div>
-          <div class="card-bottom"></div>
-        </div>
+      <div class="card-bottom static staticBottom">
+        <span class="time-count bottom staticBottomVal">00</span>
       </div>
-      <!-- Minutes -->
-      <div class="card-placeholder" id="minutes">
-       <div class="card-top static staticTop">
-          <span class="time-count staticTopVal">00</span>
-        </div>
-        <div class="card-bottom static staticBottom">
-          <span class="time-count bottom staticBottomVal">00</span>
-        </div>
-        <div class="card movingCard">
-          <span class="time-count movingVal">00</span>
-          <div class="card-top"></div>
-          <div class="card-bottom"></div>
-        </div>
+      <div class="card movingCard">
+        <span class="time-count movingVal">00</span>
+        <div class="card-top"></div>
+        <div class="card-bottom"></div>
       </div>
-      <!-- Seconds -->
-      <div class="card-placeholder" id="seconds">
-       <div class="card-top static staticTop">
-          <span class="time-count staticTopVal">00</span>
-        </div>
-        <div class="card-bottom static staticBottom">
-          <span class="time-count bottom staticBottomVal">00</span>
-        </div>
-        <div class="card movingCard">
-          <span class="time-count movingVal">00</span>
-          <div class="card-top"></div>
-          <div class="card-bottom"></div>
-        </div>
-        </div>
+      <span class="time-count-name">Hours</span>
+    </div>
+    <!-- Minutes -->
+    <div class="card-placeholder" id="minutes">
+      <div class="card-top static staticTop">
+        <span class="time-count staticTopVal">00</span>
       </div>
-    </main>
-    </main>
-  </body>
+      <div class="card-bottom static staticBottom">
+        <span class="time-count bottom staticBottomVal">00</span>
+      </div>
+      <div class="card movingCard">
+        <span class="time-count movingVal">00</span>
+        <div class="card-top"></div>
+        <div class="card-bottom"></div>
+      </div>
+      <span class="time-count-name">Minutes</span>
+    </div>
+    <!-- Seconds -->
+    <div class="card-placeholder" id="seconds">
+      <div class="card-top static staticTop">
+        <span class="time-count staticTopVal">00</span>
+      </div>
+      <div class="card-bottom static staticBottom">
+        <span class="time-count bottom staticBottomVal">00</span>
+      </div>
+      <div class="card movingCard">
+        <span class="time-count movingVal">00</span>
+        <div class="card-top"></div>
+        <div class="card-bottom"></div>
+      </div>
+      <span class="time-count-name">Seconds</span>
+    </div>
+    </div>
+  </main>
+  </main>
+</body>
+
 </html>

@@ -3,6 +3,7 @@ $grayBlue: hsl(236, 14%, 54%);
 $softRed: #d7516f;
 $softRed2: #f95d83;
 $white: hsl(0, 0%, 100%);
+$whiteTransparent: rgba(255, 255, 255, 0.6);
 $darkBlue: #34364f;
 $darkBlue2: #2c2c44;
 $darkBlue3: hsl(234, 17%, 12%);
@@ -217,6 +218,7 @@ h1 {
 
 //* End of cards */
 
+/* Fonts */
 .time-count {
   z-index: 10;
   display: block;
@@ -230,6 +232,7 @@ h1 {
   text-align: center;
   font-family: "Red Hat Text", sans-serif;
   font-size: 2.5rem;
+  font-weight: 700;
   width: 60px;
   height: 57px;
   line-height: 57px;
@@ -249,3 +252,16 @@ h1 {
     transform: translateY(-50%);
   }
 }
+
+.time-count-name {
+  color: $whiteTransparent;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-family: "Red Hat Text", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin-top: 20px;
+}
+
+/*End of  Fonts */
