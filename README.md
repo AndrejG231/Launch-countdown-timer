@@ -37,8 +37,7 @@ Users should be able to:
 
 ### Built with
 
-- HTML5 markup
-- Mobile-first workflow
+- HTML5
 - Sass
 - Typescript
 - Webpack

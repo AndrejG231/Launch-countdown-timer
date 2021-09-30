@@ -3,6 +3,7 @@ import rotateCard from "./rotate_card";
 import substractTime from "./substract_time";
 import { time } from "./types";
 import { format2digit } from "./utility";
+import "../styles/main.scss";
 
 const { days, hours, minutes, seconds } = getElements();
 

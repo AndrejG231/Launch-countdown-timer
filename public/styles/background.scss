@@ -1,0 +1,63 @@
+@import "./colors.scss";
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $grayBlue;
+  user-select: none;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(0deg, $bgStart, $bgEnd);
+  z-index: 1;
+}
+
+.hills {
+  position: absolute;
+  bottom: 0;
+  right: -230px;
+  height: 200px;
+  z-index: 2;
+
+  /* Move hills more to center on bigger screens */
+  @media screen and (min-width: 768px) {
+    right: 0;
+  }
+
+  /* Automatic scaling after 1280px */
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+  }
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+  animation: flying-stars 10s infinite linear;
+
+  // Copy for flying stars animation
+  &.copy {
+    left: -100vw;
+  }
+}
+
+/* Stars animation */
+@keyframes flying-stars {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
