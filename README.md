@@ -188,4 +188,4 @@ These parts are used for animation in following sequence:
 ## Author
 
 - Frontend Mentor - [@AndrejG231](https://www.frontendmentor.io/profile/AndrejG231)
-- Linkedin - [Andrej Germič](www.linkedin.com/in/andrej-germic)
+- Linkedin - [Andrej Germič](https://www.linkedin.com/in/andrej-germic)
