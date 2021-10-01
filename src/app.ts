@@ -1,9 +1,9 @@
+import "./styles/main.scss";
 import getElements from "./get_elements";
 import rotateCard from "./rotate_card";
 import substractTime from "./substract_time";
 import { time } from "./types";
 import { format2digit } from "./utility";
-import "../styles/main.scss";
 import checkElements from "./check_elements";
 
 const { days, hours, minutes, seconds } = getElements();

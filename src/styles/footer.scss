@@ -1,0 +1,23 @@
+@import "./colors.scss";
+
+.link-icons {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  width: 200px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon {
+  cursor: pointer;
+  &:hover {
+    transform: scale(110%);
+    path {
+      fill: $white !important;
+    }
+  }
+}
