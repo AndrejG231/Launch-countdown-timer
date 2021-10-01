@@ -9,6 +9,17 @@ export type cardContainer = {
   timeKey: string;
 };
 
+export type cardContainerChecked = {
+  staticTop: HTMLElement;
+  staticBottom: HTMLElement;
+  movingCard: HTMLElement;
+  staticTopVal: HTMLElement;
+  staticBottomVal: HTMLElement;
+  movingVal: HTMLElement;
+  current: HTMLElement | null;
+  timeKey: string;
+};
+
 export type time = {
   days: number;
   hours: number;
