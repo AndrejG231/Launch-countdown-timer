@@ -33,7 +33,7 @@ const rotateCard = (cards: cardContainerChecked[], time: time) => {
         for (const card of cards) {
           card.staticBottomVal.innerText = format2digit(time[card.timeKey]);
         }
-      }, 180);
+      }, timeout / 2);
     }, 20);
   }, timeout / 2);
 };

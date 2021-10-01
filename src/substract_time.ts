@@ -13,7 +13,7 @@ const substractTime = (time: time) => {
   }
 
   if (time.hours < 0) {
-    time.hours = 59;
+    time.hours = 23;
     time.days--;
   }
 };
