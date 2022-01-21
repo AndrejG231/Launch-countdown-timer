@@ -47,7 +47,7 @@ Users should be able to:
 
 Cards required two reverse rounded corners. Therefore I decided to use a card container with hidden overflow and CSS "before" and "after" pseudoelements, positioned in specified corners, with box shadows covering half of the card each, which resulted in the desired output.
 
-    Main circular shape of corner
+Main circular shape of corner:
 
 ```
 .card-top:after,
@@ -64,7 +64,7 @@ Cards required two reverse rounded corners. Therefore I decided to use a card co
 }
 ```
 
-    Border radiuses, positioning and card-filling box-shadows around corners.
+Border radiuses, positioning and card-filling box-shadows around corners:
 
 ```
 .card-top {
@@ -121,6 +121,7 @@ Each card is consisting of overlaying three parts - whole moving card, static to
   <div class="card-bottom"></div>
 </div>
 ```
+
 
 These parts are used for animation in following sequence:
 
