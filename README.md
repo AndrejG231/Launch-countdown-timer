@@ -9,8 +9,8 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [Main Solutions](#main-solutions)
+  - [Used technologies](#used-technologies)
+  - [Main solutions](#main-solutions)
     - [Card design](#card-design)
     - [Flipping cards](#flipping-cards)
 - [Author](#author)
@@ -34,10 +34,10 @@ Users should be able to:
 
 ## My process
 
-### Built with
+### Used technologies
 
 - HTML5
-- Sass
+- Sass(Scss)
 - Typescript
 - Webpack
 
